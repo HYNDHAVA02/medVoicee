@@ -4,65 +4,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 248 250 252;
+    --foreground: 15 23 42;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 59 130 246;
+    --primary-foreground: 248 250 252;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 241 245 249;
+    --secondary-foreground: 51 65 85;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 20%;
+    --accent: 219 234 254;
+    --accent-foreground: 30 58 138;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 59 130 246;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
+    --background: 2 6 23;
+    --foreground: 248 250 252;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
+    --card: 15 23 42;
+    --card-foreground: 248 250 252;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 59 130 246;
+    --primary-foreground: 15 23 42;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 30 41 59;
+    --secondary-foreground: 226 232 240;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 30 58 138;
+    --accent-foreground: 219 234 254;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 220 38 38;
+    --destructive-foreground: 248 250 252;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 100%;
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 59 130 246;
   }
 }
 
@@ -72,5 +72,23 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .medical-gradient {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-100;
+  }
+
+  .medical-card {
+    @apply bg-white rounded-xl shadow-lg border border-blue-100;
+  }
+
+  .medical-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+
+  .medical-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors;
   }
 }

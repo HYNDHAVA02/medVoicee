@@ -20,6 +20,20 @@ export const createClient = cache(() => {
         getUser: () => Promise.resolve({ data: { user: null }, error: null }),
         getSession: () => Promise.resolve({ data: { session: null }, error: null }),
       },
+      from: () => ({
+        select: () => ({
+          eq: () => ({
+            single: () => Promise.resolve({ data: null, error: null }),
+            order: () => Promise.resolve({ data: [], error: null }),
+          }),
+          order: () => Promise.resolve({ data: [], error: null }),
+        }),
+        update: () => ({
+          eq: () => Promise.resolve({ data: null, error: null }),
+        }),
+        insert: () => Promise.resolve({ data: null, error: null }),
+        upsert: () => Promise.resolve({ data: null, error: null }),
+      }),
     }
   }
 

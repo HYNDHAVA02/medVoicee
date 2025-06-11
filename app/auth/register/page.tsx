@@ -1,8 +1,9 @@
+import { Suspense } from "react"
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
-import LoginForm from "@/components/login-form"
+import RegistrationForm from "@/components/registration-form"
 
-export default async function LoginPage() {
+export default async function RegisterPage() {
   if (!isSupabaseConfigured) {
     return (
       <div className="flex min-h-screen items-center justify-center medical-gradient">
@@ -22,7 +23,9 @@ export default async function LoginPage() {
 
   return (
     <div className="min-h-screen medical-gradient py-12 px-4 sm:px-6 lg:px-8">
-      <LoginForm />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RegistrationForm />
+      </Suspense>
     </div>
   )
 }
